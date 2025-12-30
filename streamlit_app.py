@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-API_BASE = "http://100.48.90.23/api"
+API_BASE = st.secrets["API_BASE"]
 
 st.set_page_config(layout="wide", page_icon="🛡️", page_title="Employee Safety & Face Recognition")
 
@@ -122,4 +122,5 @@ if uploaded_file:
             else:
                 st.info(safety)
         except Exception as e:
+
             st.error(f"Error: {e}")
